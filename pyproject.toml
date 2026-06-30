@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "coupled-edit-propagation"
+version = "0.1.0"
+description = "RL environment for evaluating models on propagating edits across semantically-coupled code"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+dependencies = [
+    "numpy>=1.24.0",
+    "scipy>=1.10.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-timeout>=2.1",
+]
+
+[project.scripts]
+cep-eval = "coupled_edit_env.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
